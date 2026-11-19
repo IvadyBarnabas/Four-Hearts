@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Four Hearts — A Romcom Story</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game">
+    <section id="title-screen" class="screen active">
+      <div class="title-card">
+        <p class="eyebrow">INTERAKTÍV ROMANTIKUS VÍGJÁTÉK</p>
+        <h1>FOUR<br><span>HEARTS</span></h1>
+        <p class="subtitle">Négy helyszín. Négy történet. Egy emlékezetes tanév.</p>
+        <div class="menu-buttons">
+          <button id="new-game" class="primary">Új játék</button>
+          <button id="continue-game" class="secondary" disabled>Folytatás</button>
+        </div>
+        <p class="small-note">A karakterképeket és a háttereket később saját képeidre cserélheted.</p>
+      </div>
+    </section>
+
+    <section id="name-screen" class="screen">
+      <div class="name-card">
+        <h2>Hogy hívnak?</h2>
+        <p>A történet főszereplőjének te adod a nevét.</p>
+        <input id="player-name" maxlength="18" placeholder="Írd be a neved..." autocomplete="off">
+        <button id="start-story" class="primary">Kezdődjön a történet</button>
+      </div>
+    </section>
+
+    <section id="game-screen" class="screen">
+      <div id="scene" class="scene room-bg">
+        <div class="topbar">
+          <div><span id="day-label">1. nap</span><span class="dot">•</span><span id="place-label">Hálószoba</span></div>
+          <button id="menu-button" class="tiny-button">Menü</button>
+        </div>
+        <div class="hud">
+          <div class="player-tag"><span id="player-label">Játékos</span><small>Főszereplő</small></div>
+          <div class="heart-status" id="heart-status"></div>
+        </div>
+        <div id="character-stage" class="character-stage">
+          <img id="character-image" alt="" hidden>
+          <div id="character-placeholder" class="character-placeholder">
+            <span id="placeholder-initial">?</span>
+            <small id="placeholder-name">Karakterkép helye</small>
+          </div>
+        </div>
+        <div class="dialogue-box">
+          <div id="speaker" class="speaker">Narrátor</div>
+          <p id="dialogue-text"></p>
+          <div id="choices" class="choices"></div>
+          <button id="next-button" class="primary next-button">Tovább <span>▸</span></button>
+        </div>
+        <div id="transition" class="transition"><div class="transition-inner"><span>✦</span><p>Úton vagy...</p></div></div>
+      </div>
+      <aside class="side-panel">
+        <h3>Kapcsolatok</h3>
+        <div id="relationship-list"></div>
+        <div class="side-divider"></div>
+        <h3>Mai lehetőségek</h3>
+        <p id="daily-hint">Ébredés után válassz úti célt!</p>
+        <button id="date-button" class="secondary full" disabled>Randi meghívása</button>
+      </aside>
+    </section>
+
+    <section id="ending-screen" class="screen">
+      <div class="ending-card">
+        <p class="eyebrow">A TÖRTÉNET VÉGE</p>
+        <h1>Four Hearts</h1>
+        <p id="ending-text"></p>
+        <div id="ending-gallery" class="ending-gallery"></div>
+        <button id="restart-button" class="primary">Új játék</button>
+        <button id="title-button" class="secondary">Vissza a főmenübe</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
